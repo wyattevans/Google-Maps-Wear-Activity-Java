@@ -20,8 +20,6 @@ import android.widget.Toast;
 
 public class MapsActivity extends WearableActivity implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
-
     public void onCreate(Bundle savedState) {
         super.onCreate(savedState);
 
@@ -69,7 +67,6 @@ public class MapsActivity extends WearableActivity implements OnMapReadyCallback
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
 
         int duration = Toast.LENGTH_LONG;
         Toast toast = Toast.makeText(getApplicationContext(), R.string.intro_text, duration);
@@ -77,7 +74,7 @@ public class MapsActivity extends WearableActivity implements OnMapReadyCallback
         toast.show();
 
         LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 }
