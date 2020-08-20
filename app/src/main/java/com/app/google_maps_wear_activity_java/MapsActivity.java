@@ -28,7 +28,7 @@ public class MapsActivity extends WearableActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_maps);
 
         final SwipeDismissFrameLayout swipeDismissRootFrameLayout =
-                (SwipeDismissFrameLayout) findViewById(R.id.swipe_dismiss_root_container);
+                findViewById(R.id.swipe_dismiss_root_container);
         final FrameLayout mapFrameLayout = (FrameLayout) findViewById(R.id.map_container);
 
         swipeDismissRootFrameLayout.addCallback(new SwipeDismissFrameLayout.Callback() {
